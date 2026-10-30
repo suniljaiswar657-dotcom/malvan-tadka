@@ -14,8 +14,12 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 const menuTabs = [...document.querySelectorAll('.menu-tabs .tab')];
 const menuCards = [...document.querySelectorAll('#dishGrid .menu-item')];
+const menuSearch = document.getElementById('menuSearch');
+const menuEmpty = document.getElementById('menuEmpty');
+let activeMenuFilter = 'all';
 
 function applyMenuFilter(filter, selectedTab) {
+  activeMenuFilter = filter;
   menuTabs.forEach(tab => {
     const selected = tab === selectedTab;
     tab.classList.toggle('active', selected);
@@ -24,7 +28,10 @@ function applyMenuFilter(filter, selectedTab) {
 
   menuCards.forEach(card => {
     const categories = (card.dataset.category || '').trim().split(/\s+/).filter(Boolean);
-    const visible = filter === 'all' || categories.includes(filter);
+    const query = (menuSearch?.value || '').trim().toLocaleLowerCase();
+    const searchable = (card.querySelector('h3')?.textContent + ' ' + card.querySelector('.dish-info p')?.textContent).toLocaleLowerCase();
+    const categoryMatch = filter === 'all' || categories.includes(filter);
+    const visible = categoryMatch && (!query || searchable.includes(query));
     card.classList.toggle('is-filtered-out', !visible);
 
     if (visible) {
@@ -35,7 +42,12 @@ function applyMenuFilter(filter, selectedTab) {
       card.classList.remove('menu-reveal');
     }
   });
+  if (menuEmpty) menuEmpty.hidden = menuCards.some(card => !card.classList.contains('is-filtered-out'));
 }
+
+menuSearch?.addEventListener('input', () => {
+  applyMenuFilter(activeMenuFilter, menuTabs.find(tab => tab.classList.contains('active')) || menuTabs[0]);
+});
 
 menuTabs.forEach(tab => {
   tab.type = 'button';
@@ -44,6 +56,29 @@ menuTabs.forEach(tab => {
 
 // Keep the initial state and accessibility attributes in sync.
 if (menuTabs.length) applyMenuFilter('all', menuTabs.find(tab => tab.dataset.filter === 'all') || menuTabs[0]);
+
+const reservationForm = document.getElementById('reservationForm');
+const reservationDate = document.getElementById('reservationDate');
+if (reservationDate) {
+  const today = new Date();
+  const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+  reservationDate.min = localToday;
+}
+reservationForm?.addEventListener('submit', event => {
+  event.preventDefault();
+  if (!reservationForm.reportValidity()) return;
+  const formData = new FormData(reservationForm);
+  const message = [
+    'Hello Malvan Tadka! I would like to request a table reservation.',
+    'Name: ' + formData.get('name'),
+    'Mobile: ' + formData.get('phone'),
+    'Preferred date: ' + formData.get('date'),
+    'Preferred time: ' + formData.get('time'),
+    'Guests: ' + formData.get('guests'),
+    'Please confirm availability. Thank you!'
+  ].join('\\n');
+  window.open('https://wa.me/919833248666?text=' + encodeURIComponent(message), '_blank', 'noopener');
+});
 
 const dialog = document.getElementById('cartDialog');
 const count = document.getElementById('cartCount');
