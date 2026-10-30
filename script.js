@@ -23,7 +23,7 @@ function applyMenuFilter(filter, selectedTab) {
   });
 
   menuCards.forEach(card => {
-    const categories = (card.dataset.category || '').trim().split(/\\s+/).filter(Boolean);
+    const categories = (card.dataset.category || '').trim().split(/\s+/).filter(Boolean);
     const visible = filter === 'all' || categories.includes(filter);
     card.classList.toggle('is-filtered-out', !visible);
 
