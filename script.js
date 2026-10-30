@@ -12,20 +12,38 @@ mainNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () 
 }));
 document.getElementById('year').textContent = new Date().getFullYear();
 
-document.querySelectorAll('.tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    document.querySelectorAll('.tab').forEach(item => {
-      item.classList.remove('active');
-      item.setAttribute('aria-selected', 'false');
-    });
-    tab.classList.add('active');
-    tab.setAttribute('aria-selected', 'true');
-    const filter = tab.dataset.filter;
-    document.querySelectorAll('.dish-card').forEach(card => {
-      card.hidden = filter !== 'all' && !card.dataset.category.split(/\s+/).includes(filter);
-    });
+const menuTabs = [...document.querySelectorAll('.menu-tabs .tab')];
+const menuCards = [...document.querySelectorAll('#dishGrid .menu-item')];
+
+function applyMenuFilter(filter, selectedTab) {
+  menuTabs.forEach(tab => {
+    const selected = tab === selectedTab;
+    tab.classList.toggle('active', selected);
+    tab.setAttribute('aria-selected', String(selected));
   });
+
+  menuCards.forEach(card => {
+    const categories = (card.dataset.category || '').trim().split(/\\s+/).filter(Boolean);
+    const visible = filter === 'all' || categories.includes(filter);
+    card.classList.toggle('is-filtered-out', !visible);
+
+    if (visible) {
+      card.classList.remove('menu-reveal');
+      void card.offsetWidth;
+      card.classList.add('menu-reveal');
+    } else {
+      card.classList.remove('menu-reveal');
+    }
+  });
+}
+
+menuTabs.forEach(tab => {
+  tab.type = 'button';
+  tab.addEventListener('click', () => applyMenuFilter(tab.dataset.filter || 'all', tab));
 });
+
+// Keep the initial state and accessibility attributes in sync.
+if (menuTabs.length) applyMenuFilter('all', menuTabs.find(tab => tab.dataset.filter === 'all') || menuTabs[0]);
 
 const dialog = document.getElementById('cartDialog');
 const count = document.getElementById('cartCount');
