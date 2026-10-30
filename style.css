@@ -5,3 +5,24 @@
 .menu-item.menu-reveal{animation:menuReveal .34s ease both}
 @keyframes menuReveal{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.menu-item.menu-reveal{animation:none}}
+
+
+/* Search, reservations, accessibility and responsive polish */
+.skip-link{position:absolute;left:12px;top:-60px;z-index:30;background:var(--paper);color:var(--ink);padding:12px 16px;border:2px solid var(--copper)}
+.skip-link:focus{top:12px}
+:focus-visible{outline:3px solid var(--copper);outline-offset:3px}
+.menu-search-wrap{display:flex;align-items:center;gap:14px;max-width:520px;margin:34px 0 18px;color:var(--copper);font-size:9px;font-weight:700;letter-spacing:.18em}
+.menu-search-wrap input{flex:1;min-width:0;border:1px solid #b9b5aa;background:rgba(243,239,230,.7);padding:13px 15px;color:var(--ink);font:12px var(--sans);border-radius:0}
+.menu-empty{padding:22px;border:1px dashed #aaa69b;color:#65695f;font-size:12px}
+.review-link{display:inline-block;margin-top:9px;color:var(--copper);font-weight:700}
+.reservation{display:grid;grid-template-columns:.9fr 1.1fr;gap:12%;padding-top:100px;padding-bottom:100px;background:#e9e2d6}
+.reservation-heading h2{font:500 clamp(40px,4.5vw,60px)/1.06 var(--serif);letter-spacing:-.045em;margin:16px 0}
+.reservation-heading h2 em{color:var(--copper);font-weight:500}
+.reservation-heading p{max-width:390px;color:#696d64;font-size:13px;line-height:1.9}
+.reservation-form{display:grid;gap:16px;align-content:center}
+.reservation-form label{display:grid;gap:7px;color:#686b62;font-size:10px;font-weight:700;letter-spacing:.08em}
+.reservation-form input,.reservation-form select{width:100%;min-height:46px;border:1px solid #b9b5aa;background:var(--paper);padding:11px 12px;color:var(--ink);font:12px var(--sans);border-radius:0}
+.reservation-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.reservation-form .button{justify-self:start;cursor:pointer}
+.reservation-form small{color:#77796f;font-size:10px;line-height:1.6}
+@media(max-width:640px){.menu-search-wrap{display:grid;gap:8px;margin-top:25px}.reservation{grid-template-columns:1fr;gap:25px;padding-top:72px;padding-bottom:72px}.reservation-row{grid-template-columns:1fr 1fr}.reservation-form .button{width:100%}}
