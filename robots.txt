@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://malvan-tadka-j7zq.vercel.app/sitemap.xml
