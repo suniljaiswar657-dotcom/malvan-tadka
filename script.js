@@ -76,7 +76,7 @@ reservationForm?.addEventListener('submit', event => {
     'Preferred time: ' + formData.get('time'),
     'Guests: ' + formData.get('guests'),
     'Please confirm availability. Thank you!'
-  ].join('\\n');
+  ].join('\n');
   window.open('https://wa.me/919833248666?text=' + encodeURIComponent(message), '_blank', 'noopener');
 });
 
