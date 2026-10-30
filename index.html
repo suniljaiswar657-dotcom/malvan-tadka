@@ -4,22 +4,44 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#171b18">
-  <meta name="description" content="Discover Malvan Tadka in Kalyan — Malvani flavours, seafood favourites and coastal hospitality. View the menu, enquire and find us.">
+  <meta name="description" content="Explore selected Malvani and seafood menu highlights, enquire about a table and find Malvan Tadka in Kalyan. Call or WhatsApp the restaurant to confirm availability.">
+  <meta property="og:type" content="restaurant">
+  <meta property="og:title" content="Malvan Tadka | Malvani Coastal Dining in Kalyan">
+  <meta property="og:description" content="Malvani flavours, seafood favourites and coastal hospitality in Kalyan. Explore menu highlights and enquire about a table.">
+  <meta property="og:url" content="https://malvan-tadka-j7zq.vercel.app/">
+  <meta property="og:image" content="https://b.zmtcdn.com/data/pictures/1/20910411/0ec44ea01c6903c5a07b5cee7a43ac94.jpeg?crop=750%3A500%3B%2A%2C%2A&fit=around%7C750%3A500">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://malvan-tadka-j7zq.vercel.app/">
   <title>Malvan Tadka | Coastal Flavours in Kalyan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Malvan Tadka",
+    "telephone": "+91 98332 48666",
+    "url": "https://malvan-tadka-j7zq.vercel.app/",
+    "image": "https://b.zmtcdn.com/data/pictures/1/20910411/0ec44ea01c6903c5a07b5cee7a43ac94.jpeg?crop=750%3A500%3B%2A%2C%2A&fit=around%7C750%3A500",
+    "servesCuisine": ["Malvani", "Seafood", "North Indian", "Chinese", "Biryani"],
+    "address": {"@type": "PostalAddress", "streetAddress": "Shop 1 & 2, Shankheshwar Krupa Building, Khadakpada Road, near Birla College", "addressLocality": "Kalyan", "addressRegion": "Maharashtra", "postalCode": "421301", "addressCountry": "IN"},
+    "openingHours": "Mo-Su 11:00-24:00",
+    "sameAs": ["https://www.zomato.com/mumbai/malvan-tadka-kalyan-thane", "https://www.swiggy.com/restaurants/mumbai/kalyan/malvan-tadka-785213/dineout"]
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="announcement">A taste of the Konkan coast, right here in Kalyan</div>
   <header class="site-header">
     <a class="brand" href="#home" aria-label="Malvan Tadka home"><span class="brand-mark">MT</span><span>MALVAN <b>TADKA</b><small>THE COASTAL TABLE</small></span></a>
     <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-    <nav id="mainNav"><a href="#story">Our story</a><a href="#menu">Menu</a><a href="#experience">Experience</a><a href="#visit">Find us</a><a class="nav-cta" href="#menu">Explore menu <span>↗</span></a></nav>
+    <nav id="mainNav"><a href="#story">Our story</a><a href="#menu">Menu</a><a href="#experience">Experience</a><a href="#reserve">Reserve</a><a href="#visit">Find us</a><a class="nav-cta" href="#menu">Explore menu <span>↗</span></a></nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="hero" id="home">
       <img class="hero-photo" src="https://b.zmtcdn.com/data/pictures/1/20910411/0ec44ea01c6903c5a07b5cee7a43ac94.jpeg?crop=750%3A500%3B%2A%2C%2A&fit=around%7C750%3A500" alt="Malvan Tadka Kalyan dining area" referrerpolicy="no-referrer" fetchpriority="high">
       <div class="hero-shade"></div>
@@ -42,6 +64,7 @@
       <div class="section-wrap">
         <div class="section-heading"><div><span class="eyebrow">MADE TO BE SAVOURED</span><h2>A menu with<br><em>coastal character.</em></h2></div><p>From seafood favourites to comforting classics, find something worth gathering around.</p></div>
 
+        <label class="menu-search-wrap" for="menuSearch"><span>FIND A DISH</span><input id="menuSearch" type="search" placeholder="Search seafood, biryani, paneer..." autocomplete="off"></label>
         <div class="menu-tabs" role="tablist" aria-label="Menu categories">
           <button class="tab active" data-filter="all" role="tab" aria-selected="true">All menu</button>
           <button class="tab" data-filter="seafood" role="tab" aria-selected="false">Seafood</button>
@@ -87,7 +110,9 @@
           <article class="dish-card menu-item" data-category="starters"><div class="menu-item-top"><span>SNACK</span><b>32</b></div><div class="dish-info"><div><h3>Amboli</h3><p>Fermented rice-and-dal pancake listed in the snacks section.</p></div><button class="add-button" data-item="Amboli" aria-label="Add Amboli">+</button></div></article>
           <article class="dish-card menu-item" data-category="veg"><div class="menu-item-top"><span>DESSERT</span><b>33</b></div><div class="dish-info"><div><h3>Caramel Custard</h3><p>A dessert shown in the current online menu listing.</p></div><button class="add-button" data-item="Caramel Custard" aria-label="Add Caramel Custard">+</button></div></article>
           <article class="dish-card menu-item" data-category="veg"><div class="menu-item-top"><span>BEVERAGE</span><b>34</b></div><div class="dish-info"><div><h3>Solkadhi</h3><p>Kokum-and-coconut drink listed in the beverages section.</p></div><button class="add-button" data-item="Solkadhi" aria-label="Add Solkadhi">+</button></div></article>
-        </div>        <p class="menu-disclaimer">These are representative items from the public online menu, not the complete live menu. Items and prices can change; confirm today's availability with the restaurant.</p>
+        </div>
+        <p class="menu-empty" id="menuEmpty" hidden>No dishes match this search and category. Try another word or choose All menu.</p>
+        <p class="menu-disclaimer">These are representative items from the public online menu, not the complete live menu. Items and prices can change; confirm today's availability with the restaurant.</p>
         <div class="order-strip"><div><span class="eyebrow">READY WHEN YOU ARE</span><h3>Make your meal happen.</h3></div><div class="order-actions"><a class="button button-dark" target="_blank" rel="noopener" href="https://www.zomato.com/mumbai/malvan-tadka-kalyan-thane">Order on Zomato ↗</a><a class="button button-outline" target="_blank" rel="noopener" href="https://www.swiggy.com/restaurants/mumbai/kalyan/malvan-tadka-785213/dineout">Swiggy / Dineout ↗</a></div></div>
       </div>
     </section>
@@ -100,11 +125,23 @@
         <figure><img src="https://b.zmtcdn.com/data/pictures/chains/0/45120/dd4c49b453015365dc47f20fadc36b7f.jpg?crop=750%3A500%3B%2A%2C%2A&fit=around%7C750%3A500" alt="Fried fish dish shown on Malvan Tadka Zomato listing" loading="lazy" referrerpolicy="no-referrer"><figcaption>Fried fish · Zomato listing</figcaption></figure>
       </div>
     </section>
+    <section class="reservation section-wrap" id="reserve">
+      <div class="reservation-heading"><span class="eyebrow">PLAN YOUR VISIT</span><h2>Make a table<br><em>enquiry.</em></h2><p>Share your preferred date, time and party size. WhatsApp will open with your request ready to send. Your table is not booked until the restaurant confirms it.</p></div>
+      <form class="reservation-form" id="reservationForm">
+        <label>Your name<input name="name" type="text" autocomplete="name" maxlength="60" placeholder="Enter your name" required></label>
+        <label>Mobile number<input name="phone" type="tel" inputmode="tel" autocomplete="tel" pattern="[0-9 +()-]{10,16}" maxlength="16" placeholder="Your contact number" required></label>
+        <div class="reservation-row"><label>Preferred date<input name="date" id="reservationDate" type="date" required></label><label>Preferred time<select name="time" required><option value="">Select time</option><option>12:00 PM</option><option>1:00 PM</option><option>2:00 PM</option><option>3:00 PM</option><option>4:00 PM</option><option>5:00 PM</option><option>6:00 PM</option><option>7:00 PM</option><option>8:00 PM</option><option>9:00 PM</option><option>10:00 PM</option><option>11:00 PM</option></select></label></div>
+        <label>Number of guests<select name="guests" required><option value="">Select guests</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10+</option></select></label>
+        <button class="button button-dark" type="submit">Continue on WhatsApp ↗</button>
+        <small>Enquiry only — the restaurant must confirm your reservation.</small>
+      </form>
+    </section>
+
     <section class="experience" id="experience"><div class="experience-image"></div><div class="experience-copy"><span class="eyebrow">MORE THAN A MEAL</span><h2>Gather. Feast.<br><em>Make it a memory.</em></h2><p>Good food tastes even better when shared. Bring your favourite people, settle in and let the flavours do the talking.</p><a class="button button-light" href="https://wa.me/919833248666?text=Hello%20Malvan%20Tadka%2C%20I%27d%20like%20to%20enquire%20about%20a%20table." target="_blank" rel="noopener">Enquire about a table ↗</a></div></section>
 
     <section class="visit section-wrap" id="visit"><div class="visit-heading"><span class="eyebrow">COME ON IN</span><h2>Your table<br><em>is waiting.</em></h2><p>Find us in the heart of Kalyan. For directions, a quick question or a table enquiry, we're just a message away.</p><a class="button button-dark" href="https://www.google.com/maps/search/?api=1&query=Malvan+Tadka+Shop+1+2+Shankheshwar+Krupa+Building+Khadakpada+Kalyan" target="_blank" rel="noopener">Get directions ↗</a></div>
       <div class="visit-details">
-        <div class="detail"><span>01 / QUICK FACTS</span><p>Google listing: 4.5★ · 3,060+ reviews<br>Zomato dining listing: 4.3★ · approx. ₹700 for two<br><small>Platform ratings and cost are snapshots and may change.</small></p></div>
+        <div class="detail"><span>01 / QUICK FACTS</span><p>Google listing: 4.5★ · 3,060+ reviews<br>Zomato dining listing: 4.3★ · approx. ₹700 for two<br><small>Platform ratings and cost are snapshots and may change.</small><br><a class="review-link" href="https://www.google.com/search?q=Malvan+Tadka+Kalyan+reviews" target="_blank" rel="noopener">Read current Google reviews ↗</a></p></div>
         <div class="detail"><span>02 / DINE-IN & FACILITIES</span><p>Public listings mention indoor / booth seating, family-friendly dining, parking, Wi-Fi and table reservations. Some listings also mention live music and step-free entry.</p></div>
         <div class="detail"><span>03 / ADDRESS</span><p>Shop 1 & 2, Shankheshwar Krupa Building,<br>Khadakpada Road, near Birla College,<br>Kalyan, Maharashtra 421301</p></div>
         <div class="detail"><span>04 / HOURS</span><p>Listed hours: 11:00 AM – 12:00 AM<br><small>Please call to confirm today's hours.</small></p></div>
